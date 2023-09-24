@@ -1,0 +1,14 @@
+<div [ngClass]="{ 'flex justify-center text-center': inlineText }">
+  <mat-spinner
+    [diameter]="diameter"
+    [ngClass]="{ 'm-auto': !inlineText }"
+    color="primary"
+  ></mat-spinner>
+  <p
+    *ngIf="inlineText"
+    class="pl-1 leading-5 inline-block subtitle-medium"
+    [ngClass]="color"
+  >
+    {{ inlineText }}
+  </p>
+</div>

@@ -1,0 +1,71 @@
+// Tailwind Imports
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html,
+body {
+  height: 100%;
+}
+body {
+  margin: 0;
+  font-family: Roboto, 'Helvetica Neue', sans-serif;
+}
+
+.textured-bg {
+  background-image: url('./assets/patterns/dust_scratches.png');
+  background-repeat: repeat;
+}
+
+.mat-mdc-form-field {
+  /// Remove line horizontal in inputs outline
+  .mdc-notched-outline__notch {
+    border-right: none;
+  }
+}
+
+//* SNACKBAR
+
+/// Overrides the default accent color for the snackbar action
+.snackbar {
+  .mdc-snackbar__surface {
+    min-width: 100px !important;
+  }
+
+  .mat-mdc-snack-bar-action {
+    color: #fff;
+  }
+
+  .mat-mdc-button {
+    min-width: 35px !important;
+
+    .mdc-button__label {
+      color: #fff;
+    }
+  }
+}
+
+.snackbar-error {
+  .mat-mdc-snack-bar-handset,
+  .mat-mdc-snack-bar-container,
+  .mat-mdc-snack-bar-label {
+    color: red !important;
+    background-color: #F6CED8 !important;
+
+    @apply rounded;
+  }
+
+  .mdc-snackbar__surface {
+    min-width: 100px !important;
+
+    @apply p-0;
+  }
+
+  .mat-mdc-button {
+    min-width: 35px !important;
+
+    .mdc-button__label {
+      color: red !important;
+    }
+  }
+}

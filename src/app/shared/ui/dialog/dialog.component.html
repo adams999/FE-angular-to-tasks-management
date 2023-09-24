@@ -1,0 +1,37 @@
+<mat-dialog-content>
+  <section class="confirm-modal-content">
+    <!-- Title -->
+    <h4 id="title" class="text-left text-slate-900 font-bold">
+      {{ title }}
+    </h4>
+
+    <!-- Message if not a prompt dialog. -->
+    <div id="message" class="whitespace-pre-wrap overflow-y-auto">
+      {{ message }}
+    </div>
+
+    <!-- Buttons -->
+    <div mat-dialog-actions align="end">
+      <!-- Cancel -->
+      <button
+        class="uppercase"
+        id="cancel"
+        mat-button
+        [mat-dialog-close]="false">
+        {{ cancelButtonText }}
+      </button>
+
+      <!-- OK -->
+      <button
+        class="hover:text-white uppercase"
+        id="confirm"
+        mat-button
+        cdkFocusInitial
+        [mat-dialog-close]="true"
+        mat-stroked-button
+        color="warn">
+        {{ okButtonText }}
+      </button>
+    </div>
+  </section>
+</mat-dialog-content>

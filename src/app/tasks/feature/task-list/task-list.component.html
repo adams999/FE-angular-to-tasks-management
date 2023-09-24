@@ -1,0 +1,29 @@
+<h2 class="flex justify-center items-center text-cyan-950 font-bold">
+  {{ title }}
+</h2>
+
+<ng-container *ngIf="!loading; else loadingTemplate">
+  <section class="px-4 flex justify-center">
+    <button
+      [routerLink]="['/tasks/new-task']"
+      mat-fab
+      color="primary"
+      matTooltip="Agrega Nueva Tarea">
+      <i class="fa-solid fa-plus"></i>
+    </button>
+  </section>
+
+  <section
+    class="py-10 px-4 md:px-20 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+    <article *ngFor="let task of tasks; trackBy: trackBy">
+      <app-task-item
+        (refreshListTasks)="removeTask($event)"
+        [task]="task"></app-task-item>
+    </article></section
+></ng-container>
+
+<ng-template #loadingTemplate>
+  <div class="w-full h-[calc(100%-50px)] flex justify-center items-center py-5">
+    <app-loading></app-loading>
+  </div>
+</ng-template>
